@@ -82,8 +82,8 @@ jobs:
       - name: Commit Changes
         if: steps.check_changes.outputs.changes == 'true'
         run: |
-          git config user.name "lm379"
-          git config user.email "action@github.com"
+          git config user.name "L3105180447"
+          git config user.email "3105180447@qq.com"
           git add openlist/Makefile luci-app-openlist/Makefile
           git commit -m "chore: Update upstream to ${UPSTREAM_VERSION}"
           git push origin main
