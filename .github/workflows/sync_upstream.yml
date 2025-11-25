@@ -2,7 +2,10 @@ name: Sync Upstream Release Hash
 on:
   schedule:
     - cron: '0 */4 * * *'  # 每4小时运行一次
+  workflow_dispatch:
 
+permissions:
+  contents: write
 
 jobs:
   update_makefile:
@@ -12,7 +15,7 @@ jobs:
       - name: Checkout Current Repo
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       # 获取上游仓库的 Release Version
