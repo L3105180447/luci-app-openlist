@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
 
       - name: Build
-        uses: L3105180447/gh-action-sdk@main
+        uses: sbwml/openwrt-gh-action-sdk@go1.24
         env:
           ARCH: ${{ matrix.arch }}-${{ matrix.sdk }}
           FEEDNAME: packages_ci
