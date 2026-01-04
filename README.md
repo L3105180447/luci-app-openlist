@@ -1,11 +1,10 @@
 # luci-app-openlist - for openwrt-18.06
 
-A file list program that supports multiple storage.
+一个支持多存储的文件列表程序。
 
-## How to build
+## 如何构建
 
-- Install `libfuse` development package.
-
+- 安装依赖：libfuse
   - ubuntu/debian:
     ```shell
     sudo apt update
@@ -22,17 +21,17 @@ A file list program that supports multiple storage.
     sudo pacman -S fuse2
     ```
 
-- Enter in your openwrt dir
+- 进入你的OpenWrt目录
 
-- Openwrt official SnapShots
+- Openwrt官方SnapShots
 
-  *1. requires golang 1.22.x or latest version (Fix build for older branches of OpenWrt.)*
+  *1. 需要Go 1.22.x或更高版本（用于修复旧版OpenWrt的构建问题）
   ```shell
   rm -rf feeds/packages/lang/golang
   git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
   ```
 
-  *2. get luci-app-openlist source & building*
+  *2. 获取luci-app-openlist源码并编译
   ```shell
   git clone https://github.com/lm379/luci-app-openlist -b lua package/openlist
   make menuconfig # choose LUCI -> Applications -> luci-app-openlist
